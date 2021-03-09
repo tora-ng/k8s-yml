@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: # Foo-pv-volume 
+  labels:
+    type: # `local`
+spec:
+  storageClassName: # manual, for docker desktop is `hostpath`
+  capacity:
+    storage: # 2Gi 
+  accessModes:
+    - ReadWriteOnce
+  # A hostPath volume mounts a file or directory from the host node's filesystem into your Pod. 
+  hostPath:
+    path: # /host_mnt/c/Development/k8s-PV/httpd/cgi-bin

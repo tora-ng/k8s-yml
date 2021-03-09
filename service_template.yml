@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: 
+  labels:
+    app: # Defined in deploy 
+    environment: # test | prod
+    app.kubernetes.io/instance: # app-master/slave/a,b,c,etc. 
+    app.kubernetes.io/version: # aa.bb.cc
+    app.kubernetes.io/component: # Database, web-server, e.t.c.
+    app.kubernetes.io/part-of: # part of some project
+spec:
+  ports:
+    - port: # 80/443/...
+      protocol: TCP
+  selector:
+    app: 
+    tier: 
+    environment: 
+  type: LoadBalancer

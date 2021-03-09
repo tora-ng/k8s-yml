@@ -1,0 +1,36 @@
+# Please first Run PV, PVC & Service
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: # foo-deployment
+spec:
+  selector:
+    matchLabels:
+      app: # the application you would like to deploy
+      tier: # front-end | back-end | e.t.c
+      environment: # test | prod
+  replicas: # 1, nums 
+  template:
+    metadata:
+      labels:
+        app:
+        tier: 
+        environment: 
+        app.kubernetes.io/instance: 
+        app.kubernetes.io/version: 
+        app.kubernetes.io/component:
+        app.kubernetes.io/part-of: 
+    spec:
+      containers:
+      - name: 
+        image: # image in docker/ ... registry with version num 
+        ports:
+        - containerPort: 
+        volumeMounts:
+        - name: # The PV created before 
+          mountPath: # the mount point at your container 
+      volumes:
+        - name: # tThe PV created before
+          persistentVolumeClaim:
+            claimName: # The PVC name 
